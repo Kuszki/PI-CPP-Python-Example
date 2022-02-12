@@ -28,6 +28,8 @@ using namespace std;
 
 int main(int argc, char* argp[])
 {
+	if (fibonacci(19) != 4181) return -1;
+
 	std::ifstream file("LICENSE");
 	std::string buff;
 
