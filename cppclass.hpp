@@ -23,20 +23,21 @@
 
 #include <boost/python.hpp>
 
+//! Testowa klasa C++
 class cppclass
 {
 
 	protected:
 
-		int m_value;
+		int m_value; //!< Wartość
 
 	public:
 
-		explicit cppclass(int value = 0);
-		virtual ~cppclass(void);
+		explicit cppclass(int value = 0 /*!< [in] Wartość początkowa */); //!< Konstruktor
+		virtual ~cppclass(void); //!< Wirtualny destruktor (dla przyszłego polimorfizmu)
 
-		int get_value(void) const;
-		void set_value(int value);
+		int get_value(void) const; //!< Pobranie bieżącej wartości.
+		void set_value(int value /*!< [in] Nowa wartość */); //!< Zadanie wartości
 
 };
 

@@ -26,9 +26,11 @@
 #include <string>
 #include <list>
 
-std::string justify(const std::string& text,
-                    unsigned size = 80);
+//! Formatuje zadany tekst wyrównując go do lewej i prawej (justyfikacja)
+std::string justify(const std::string& text /*!< [in] Tekst do sformatowania */,
+                    unsigned size = 80 /*!< [in] Zadana liczba kolumn */);
 
-unsigned fibonacci(unsigned n);
+//! Oblicza n-ty wyraz ciągu Fibonacciego
+unsigned fibonacci(unsigned n /*!< [in] Numer wyrazu */);
 
 #endif // CPPCODE_HPP

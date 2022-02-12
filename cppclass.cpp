@@ -35,11 +35,12 @@ void cppclass::set_value(int value)
 	m_value = value;
 }
 
+// Utworzenie dowiązania "cppclass"
 BOOST_PYTHON_MODULE(cppclass)
 {
+	// Dodanie do dowiązania klasy "cppclass"
 	boost::python::class_<cppclass>("cppclass")
-	          .def(boost::python::init<int>())
-	          .def("get_value", &cppclass::get_value)
-	          .def("set_value", &cppclass::set_value);
-
+	          .def(boost::python::init<int>()) // Dodanie konstruktora
+	          .def("get_value", &cppclass::get_value) // Dodanie metody "get_value"
+	          .def("set_value", &cppclass::set_value); // Dodanie metody "set_value"
 }

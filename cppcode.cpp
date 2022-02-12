@@ -133,8 +133,9 @@ unsigned fibonacci(unsigned n)
 	}
 }
 
+// Utworzenie dowiązania o nazwie "cppcode"
 BOOST_PYTHON_MODULE(cppcode)
 {
-	boost::python::def("justify", justify);
-	boost::python::def("fibonacci", fibonacci);
+	boost::python::def("justify", justify); // Dodaj funkcję "justify"
+	boost::python::def("fibonacci", fibonacci); // Dodaj funkcję "fibonacci"
 }
