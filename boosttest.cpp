@@ -18,19 +18,40 @@
  *                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-#include <iostream>
-#include <fstream>
+#define BOOST_TEST_MODULE boosttest
+#include <boost/test/included/unit_test.hpp>
 
 #include "cppclass.hpp"
 #include "cppcode.hpp"
 
-using namespace std;
+BOOST_AUTO_TEST_SUITE(cpp_class)
 
-int main(int argc, char* argp[])
+BOOST_AUTO_TEST_CASE(constr)
+{
+	cppclass obj1(123), obj2;
+
+	BOOST_CHECK_EQUAL(obj1.get_value(), 123);
+	BOOST_CHECK_EQUAL(obj2.get_value(), 0);
+}
+
+BOOST_AUTO_TEST_CASE(setter)
+{
+	cppclass obj1(123), obj2;
+
+	obj1.set_value(456);
+	obj2.set_value(123);
+
+	BOOST_CHECK_EQUAL(obj1.get_value(), 456);
+	BOOST_CHECK_EQUAL(obj2.get_value(), 123);
+}
+
+BOOST_AUTO_TEST_SUITE_END()
+
+BOOST_AUTO_TEST_SUITE(cpp_code)
+
+BOOST_AUTO_TEST_CASE(textjust)
 {
 	using s_t = std::string::size_type;
-
-	if (fibonacci(19) != 4181) return -1;
 
 	std::ifstream file("LICENSE");
 	std::string buff;
@@ -44,16 +65,26 @@ int main(int argc, char* argp[])
 	const auto str = justify(buff, 80);
 	const auto len = str.length();
 
-	std::cout << str << std::endl;
-
 	for (s_t i = 0; i < len; ++i)
 	{
 		auto pos = str.find('\n', i);
 
-		if (pos == std::string::npos || pos == len-1) break;
-		else if (pos - i != 80) return -1;
-		else i = pos;
-	}
+		if (pos == std::string::npos ||
+		    pos == len-1) break;
 
-	return 0;
+		BOOST_CHECK_EQUAL(pos - i, 80);
+
+		i = pos;
+	}
 }
+
+BOOST_AUTO_TEST_CASE(fibvalue)
+{
+	BOOST_CHECK_EQUAL(fibonacci(19), 4181);
+	BOOST_CHECK_EQUAL(fibonacci(15), 610);
+	BOOST_CHECK_EQUAL(fibonacci(12), 144);
+	BOOST_CHECK_EQUAL(fibonacci(9), 34);
+	BOOST_CHECK_EQUAL(fibonacci(1), 1);
+}
+
+BOOST_AUTO_TEST_SUITE_END()

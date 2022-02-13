@@ -20,6 +20,10 @@ add_executable(cpptest cpptest.cpp
 	cppcode.cpp cppcode.hpp
 	cppclass.cpp cppclass.hpp)
 
+add_executable(boosttest boosttest.cpp
+	cppcode.cpp cppcode.hpp
+	cppclass.cpp cppclass.hpp)
+
 python_add_module(cppcode
 	cppcode.cpp cppcode.hpp)
 
@@ -33,8 +37,10 @@ list(APPEND LIB_LIST
 target_link_libraries(cppcode ${LIB_LIST})
 target_link_libraries(cppclass ${LIB_LIST})
 target_link_libraries(cpptest ${LIB_LIST})
+target_link_libraries(boosttest ${LIB_LIST})
 
 add_test(NAME test-cpp COMMAND cpptest)
+add_test(NAME test-boost COMMAND boosttest)
 
 add_test(NAME test-code COMMAND
 	${PYTHON_EXECUTABLE} test-code.py)
