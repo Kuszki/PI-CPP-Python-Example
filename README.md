@@ -8,10 +8,11 @@ napisanym w języku Python.
 
 Przykład obejmuje tworzenie bindów do funkcji oraz przykładowej klasy.
 
-W przykładzie zawarto również 3 testy jednostkowe w standardzie CTest:
+W przykładzie zawarto również 4 testy jednostkowe w standardzie CTest:
 - test modułu `cppcode` napisany w języku C++,
 - test modułu `cppcode` użytego w programie Pythona,
-- test modułu `cppclass` użytego w programie Pythona.
+- test modułu `cppclass` użytego w programie Pythona,
+- test w standardzie `boost` klasy CPP oraz funkcji CPP.
 
 ## Wymagania
 - libboost-python: `apt install libboost-python-dev`,
