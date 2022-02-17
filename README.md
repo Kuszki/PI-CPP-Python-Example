@@ -27,6 +27,6 @@ W przykładzie zawarto również 4 testy jednostkowe w standardzie CTest:
 - Testowanie: `ctest` (opcjonalne - uruchamia wszystkie zdefiniowane testy).
 
 ## Przydatne linki
-- [Więcej przykładów](https://www.boost.org/doc/libs/1_78_0/libs/python/doc/html/index.html)
+- [Więcej przykładów](https://github.com/TNG/boost-python-examples)
 - [Dokumentacja](https://www.boost.org/doc/libs/1_78_0/libs/python/doc/html/index.html)
 - [Tutorial](https://www.boost.org/doc/libs/1_78_0/libs/python/doc/html/tutorial/index.html)
