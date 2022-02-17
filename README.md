@@ -16,15 +16,15 @@ W przykładzie zawarto również 4 testy jednostkowe w standardzie CTest:
 
 ## Wymagania
 - libboost-python: `apt install libboost-python-dev`,
-- python: `apt install python3`.
+- libboost-test: `apt install libboost-test-dev`,
+- python: `apt install python3` (wersja 2 teź jest wspierana).
 
 ## Budowanie
 - Klonowanie projektu: `git clone https://github.com/Kuszki/PI-CPP-Python-Example`,
-- Utworzenie katalogu budowania: `mkdir build`,
-- Przejście do katalogu budowania `cd build`,
+- Utworzenie katalogu budowania i przejście do niego: `mkdir build && cd build`,
 - Konfiguracja CMake: `cmake ../PI-CPP-Python-Example -DCMAKE_BUILD_TYPE=Release`,
-- Budowanie: `cmake --build .`,
-- Testowanie: `ctest`.
+- Budowanie: `cmake --build .` (uniwersalne) lub `make` bądź `nmake` (zaleznie od platformy),
+- Testowanie: `ctest` (opcjonalne - uruchamia wszystkie zdefiniowane testy).
 
 ## Przydatne linki
 - [Więcej przykładów](https://www.boost.org/doc/libs/1_78_0/libs/python/doc/html/index.html)
