@@ -48,6 +48,6 @@ add_test(NAME test-code COMMAND
 add_test(NAME test-class COMMAND
 	${PYTHON_EXECUTABLE} test-class.py)
 
-file(COPY test-code.py DESTINATION .)
-file(COPY test-class.py DESTINATION .)
-file(COPY LICENSE DESTINATION .)
+file(COPY test-code.py DESTINATION ${PROJECT_BINARY_DIR})
+file(COPY test-class.py DESTINATION ${PROJECT_BINARY_DIR})
+file(COPY LICENSE DESTINATION ${PROJECT_BINARY_DIR})
